@@ -31,4 +31,5 @@ def hello():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))
     print(f"서버 시작 중... 포트: {port}")
+    print(f"사용 가능한 라우트: {[rule.rule for rule in app.url_map.iter_rules()]}")
     app.run(host='0.0.0.0', port=port, debug=False)
